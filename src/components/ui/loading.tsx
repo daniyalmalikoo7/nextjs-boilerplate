@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { Skeleton } from '@/components/ui/skeleton';
 
 interface LoadingProps {
   className?: string;
@@ -21,11 +22,22 @@ export function Loading({
     <div className={cn('flex items-center justify-center gap-2', className)}>
       <div
         className={cn(
-          'animate-spin rounded-full border-2 border-gray-300 border-t-blue-600',
+          'animate-spin rounded-full border-2 border-muted border-t-primary',
           sizeClasses[size]
         )}
       />
-      {text && <span className="text-sm text-gray-600">{text}</span>}
+      {text && <span className="text-sm text-muted-foreground">{text}</span>}
+    </div>
+  );
+}
+
+// Alternative skeleton-based loading for content areas
+export function LoadingSkeleton({ className }: { className?: string }) {
+  return (
+    <div className={cn('space-y-3', className)}>
+      <Skeleton className="h-4 w-full" />
+      <Skeleton className="h-4 w-3/4" />
+      <Skeleton className="h-4 w-1/2" />
     </div>
   );
 }

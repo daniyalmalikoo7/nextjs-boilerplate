@@ -6,35 +6,32 @@ test.describe('Homepage', () => {
 
     // Check main heading
     await expect(
-      page.getByRole('heading', { name: /interview project boilerplate/i })
+      page.getByRole('heading', { name: /hello world/i })
     ).toBeVisible();
 
-    // Check navigation
-    await expect(page.getByRole('link', { name: /home/i })).toBeVisible();
-    await expect(page.getByRole('link', { name: /demo/i })).toBeVisible();
+    // Check tech stack badges
+    await expect(page.getByText(/next\.js 15/i)).toBeVisible();
+    await expect(page.getByText(/shadcn\/ui/i)).toBeVisible();
+    await expect(page.getByText(/magic ui mcp/i)).toBeVisible();
+    await expect(page.getByText(/lucide react/i)).toBeVisible();
 
-    // Check feature cards
-    await expect(page.getByText(/typescript ready/i)).toBeVisible();
-    await expect(page.getByText(/react query/i)).toBeVisible();
-    await expect(page.getByText(/zod validation/i)).toBeVisible();
-
-    // Check demo button works
-    await page.getByRole('link', { name: /view demo/i }).click();
-    await expect(page).toHaveURL('/demo');
+    // Check get started button
+    await expect(
+      page.getByRole('button', { name: /get started building/i })
+    ).toBeVisible();
   });
 
   test('should have working navigation', async ({ page }) => {
     await page.goto('/');
 
-    // Test demo navigation
-    await page.getByRole('link', { name: /demo/i }).click();
-    await expect(page).toHaveURL('/demo');
+    // Check header navigation
     await expect(
-      page.getByRole('heading', { name: /component patterns demo/i })
+      page.getByRole('link', { name: /next\.js boilerplate/i })
     ).toBeVisible();
+    await expect(page.getByRole('link', { name: /github/i })).toBeVisible();
 
-    // Test home navigation
-    await page.getByRole('link', { name: /home/i }).click();
+    // Test home navigation by clicking header link
+    await page.getByRole('link', { name: /next\.js boilerplate/i }).click();
     await expect(page).toHaveURL('/');
   });
 });

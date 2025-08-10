@@ -4,25 +4,52 @@ A production-ready Next.js boilerplate designed for technical and rapid prototyp
 
 ## ⚡ Quick Start
 
-bash
-
+```bash
 # 1. Clone or use this template
-
-git clone https://github.com/your-username/nextjs-interview-boilerplate.git your-project
+git clone https://github.com/your-username/nextjs-boilerplate.git your-project
 cd your-project
 
 # 2. Install dependencies (everything is already configured)
-
 pnpm install
 
 # 3. Install Playwright browsers (for E2E tests)
-
 pnpm exec playwright install
 
 # 4. Start development
-
 pnpm dev
+```
+
 That's it! Open http://localhost:3000 and start building your project.
+
+## 🎨 Magic UI MCP Integration
+
+This boilerplate includes Magic UI MCP integration for rapid component generation. Use these commands in Cursor:
+
+### Component Generation
+
+```
+/ui create a pricing table
+/ui build a contact form
+/ui design a hero section
+/ui make a dashboard layout
+```
+
+### Logo Integration
+
+```
+/logo github
+/logo discord
+/logo slack
+/logo figma
+```
+
+### Usage Examples
+
+- **Pricing Components**: `/ui create a 3-tier pricing table with monthly/yearly toggle`
+- **Forms**: `/ui build a contact form with validation`
+- **Navigation**: `/ui design a responsive navbar with dropdown menus`
+- **Cards**: `/ui create feature cards with icons and descriptions`
+
 🔧 Alternative Setup Methods
 GitHub Template:
 
